@@ -1,108 +1,118 @@
-/* Reset some default styles for better cross-browser consistency */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-/* Apply a background color to the entire body */
-body {
-    background-color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Style the header and navbar */
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
 nav {
-    background-color: #3498db;
-    padding: 10px;
+    background-image: url('spacedogbackground.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+ 
+body {
+  font-family: Arial, sans-serif;
+  color: #343a40; /* dark grey */
 }
 
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+/* Navigation Styles */
+.navbar {
+  background-color: #343a40; /* dark grey */
 }
 
-nav a:hover {
-    text-decoration: underline;
+.navbar-brand img {
+  width: 100px; /* adjust size as needed */
+  height: auto; /* maintain aspect ratio */
 }
 
-/* Add this rule to style.css */
-.banner-image {
-    width: 100%; /* Make the image fill the entire width of its container */
-    height: auto; /* Maintain the aspect ratio of the image */
-    display:block; /* Remove any default inline spacing */
-    margin-bottom: 0px; /* Adjust the margin as needed */
+.navbar-nav .nav-link {
+  color: white;
 }
 
-/* Style the main content */
-.main-content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.navbar-nav .nav-link:hover {
+  color: lightgrey;
 }
 
-/* Style the call-to-action (CTA) section */
-.cta-section {
-    text-align: center;
-    padding: 40px;
-    background-color: #3498db;
-    color: #fff;
+/* Jumbotron Styles */
+.jumbotron {
+  background-color: #f8f9fa; /* light grey */
+  padding: 100px 0; /* adjust padding as needed */
 }
 
-.cta-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.jumbotron h1 {
+  color: #343a40; /* dark grey */
+  font-size: 36px; /* adjust font size as needed */
+  font-weight: bold; /* adjust font weight as needed */
 }
 
-/* Style the footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.jumbotron p {
+  color: #6c757d; /* grey */
+  font-size: 18px; /* adjust font size as needed */
 }
 
-/* Add some styles to links */
-a {
-    color: #3498db;
-    text-decoration: none;
+/* Main Content Section Styles */
+.container {
+  margin-top: 50px; /* adjust margin as needed */
 }
 
-a:hover {
-    text-decoration: underline;
+.container h2 {
+  color: #343a40; /* dark grey */
+  font-size: 24px; /* adjust font size as needed */
+  font-weight: bold; /* adjust font weight as needed */
 }
 
-/* Style for pages */
-.page-content {
-    margin-top: 20px;
+.container p {
+  color: #6c757d; /* grey */
+  font-size: 16px; /* adjust font size as needed */
 }
 
-/* Style the contact page */
-.contact-page {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
+/* Footer Styles */
+.footer {
+  background-color: #343a40; /* dark grey */
+  color: white;
 }
 
-/* Style the home page */
-.home-page {
-    /* Add specific styles for the home page if needed */
+/* Form Section Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Style the about me page */
-.about-page {
-    /* Add specific styles for the about me page if needed */
+#form {
+  text-align: center;
 }
+
+
+#form {
+  margin-top: 50px; /* adjust margin as needed */
+}
+
+#email {
+  width: 300px; /* adjust width as needed */
+  padding: 10px;
+  margin-right: 10px; /* adjust margin as needed */
+}
+
+#submit {
+  padding: 10px 20px;
+  background-color: #007bff; /* blue */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #0056b3; /* darker blue */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .jumbotron {
+      padding: 50px 0; /* adjust padding as needed */
+  }
+
+  .container {
+      margin-top: 30px; /* adjust margin as needed */
+  }
+}
+This CSS file now includes font styles such as font-family, font-size, and font-weight for various elements like headings and paragraphs. Additionally, it specifies colors for text content throughout the page. Feel free to adjust these values to match your design preferences.
+
+
+
+

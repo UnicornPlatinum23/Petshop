@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro Paws About</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="astrodoglogo.png" alt="Pet Store Logo" width="400" height="400" class="d-inline-block align-top" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="adopt.html">Adopt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <h1 class="display-4">Welcome to Astro Paws!</h1>
+      <p class="lead">I'm your stellar beast defender, the founder with a passion for connecting dogs with loving homes.</p>
+      
+      <!-- Carousel -->
+      <div class="carousel">
+        <div class="carousel-container" id="carouselContainer">
+          <!-- Carousel items will be dynamically added here -->
+        </div>
+        <button class="carousel-button prev-button" onclick="moveCarousel(-1)">Previous</button>
+        <button class="carousel-button next-button" onclick="moveCarousel(1)">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer bg-dark text-white text-center py-4">
+    <div class="container">
+      <span class="text-muted">© 2024 Astro Paws. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    var shop = [
+      {
+        title: 'Dog',
+        image: './pitbull.jpg',
+        price: '$7,500-15,000',
+        description: 'Description of Pitbull.'
+      },
+      {
+        title: 'Dog',
+        image: './ilya-shishikhin-SCIRnLEtqWc-unsplash.jpg',
+        price: '$7,500-15,000',
+        description: 'Description of Ilya Shishikhin.'
+      },
+      {
+        title: 'Dog',
+        image: './reba-spike-ISahwf9hCNg-unsplash.jpg',
+        price: '$7,500-15,000',
+        description: 'Description of Reba Spike.'
+      },
+      {
+        title: 'Dog',
+        image: './black lab.jpg',
+        price: '$7,500-15,000',
+        description: 'Description of Black Lab.'
+      },
+      {
+        title: 'Dog',
+        image: './rodrigo-rodrigues-wolf-r-t-1vIgqMIeDDI-unsplash.jpg',
+        price: '$7,500-15,000',
+        description: 'Description of Rodrigo Rodrigues.'
+      }
+    ];
+
+    const carouselContainer = document.getElementById('carouselContainer');
+    const totalSlides = shop.length;
+    let currentIndex = 0;
+
+    function moveCarousel(direction) {
+      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function updateCarousel() {
+      carouselContainer.style.transform = `translateX(-${currentIndex * 500}px)`;
+    }
+
+    // Initialize the carousel
+    function initializeCarousel() {
+      for (let i = 0; i < totalSlides; i++) {
+        const item = document.createElement('div');
+        item.classList.add('carousel-item');
+        item.innerHTML = `
+          <div class="product">
+            <span>
+              <h5>${shop[i].title}</h5>
+              <img src="${shop[i].image}" alt="${shop[i].title}">
+              <p>${shop[i].price}</p>
+              <div>
+                <p>${shop[i].description}</p>
+                <button type="button" class="btn btn-warning">Add to Cart</button>
+              </div>
+            </span>
+          </div>
+        `;
+        carouselContainer.appendChild(item);
+      }
+    }
+
+    initializeCarousel();
+  </script>
+  <script src="./app.js"></script>
+</body>
+</html>
